@@ -4,19 +4,41 @@ var items = {};
 // display current day/date to top of page
 var currentDate = moment().format("dddd MMMM Do, YYYY");
 $("#currentDay").text(currentDate);
+var currentTime = moment().hour();
+
+// function to color code the time-block based on the current hour of the day
+function timeChecker() {
+    var currentTime = moment().hour();
+    console.log(currentTime);
+    debugger;
+    $(".time-block").each(function() {
+        var timeBlockId = $(this).attr("id");
+        console.log(timeBlockId);
+        if(currentTime === timeBlockId ) {
+            $("textarea.description").addClass("present")
+        } else if (currentTime > timeBlockId) {
+            $(this).addClass("past");
+        } else {
+            $("textarea.description").addClass("future")
+        }
+    })
+};
+    
+
+timeChecker();
 
 
 // when a save button is clicked, save items to localStorage
-$(".save-button").on("click", function() {
-    var text = $(this).siblings("textarea").val().trim();
+$(".saveBtn").on("click", function() {
     var hour = $(this).parent().attr("id");
+    var text = $(this).siblings("textarea").val().trim();
+    
     console.log(text);
     console.log(hour);
     localStorage.setItem(hour, text);
 });
 
-// want to store the textarea text, and save it with the hour that it was entered in at
-// need to set up the localStorage format
-
 // load any value saved in localStorage
-$("#eightAm textarea").val(localStorage.getItem("eightAm"))
+$("").val(localStorage.getItem(""));
+
+
