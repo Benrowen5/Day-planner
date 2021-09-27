@@ -9,4 +9,4 @@ A baseline acceptance criteria was provided and all items have been completed. T
 https://benrowen5.github.io/Homework-5// </br></br>
 
 ## Screenshot:</br>
-
+![WorkDaySchedulerSS](https://user-images.githubusercontent.com/79202800/134988552-aa315cf8-7b44-46fd-a2b2-763a1601fc79.PNG)
