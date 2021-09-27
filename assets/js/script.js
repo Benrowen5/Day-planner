@@ -1,44 +1,44 @@
-// add day to the top of the page
-var items = {};
-
 // display current day/date to top of page
+// format for day/date 
 var currentDate = moment().format("dddd MMMM Do, YYYY");
 $("#currentDay").text(currentDate);
-var currentTime = moment().hour();
 
 // function to color code the time-block based on the current hour of the day
 function timeChecker() {
+    // define the current hour
     var currentTime = moment().hour();
-    console.log(currentTime);
-    debugger;
+    // find each element with time-block class and iterate through each to apply color based on time
     $(".time-block").each(function() {
         var timeBlockId = $(this).attr("id");
-        console.log(timeBlockId);
-        if(currentTime === timeBlockId ) {
-            $("textarea.description").addClass("present")
-        } else if (currentTime > timeBlockId) {
+        if(timeBlockId == currentTime ) {
+            $(this).addClass("present")
+        } if (timeBlockId < currentTime) {
             $(this).addClass("past");
-        } else {
-            $("textarea.description").addClass("future")
+        } if (timeBlockId > currentTime) {
+            $(this).addClass("future")
         }
-    })
+    });
 };
-    
-
+// call for color coding
 timeChecker();
-
 
 // when a save button is clicked, save items to localStorage
 $(".saveBtn").on("click", function() {
+    // pull id attribute for each hour time block and entered text
     var hour = $(this).parent().attr("id");
     var text = $(this).siblings("textarea").val().trim();
-    
-    console.log(text);
-    console.log(hour);
     localStorage.setItem(hour, text);
 });
 
 // load any value saved in localStorage
-$("").val(localStorage.getItem(""));
-
+$("#8 .description").val(localStorage.getItem("8"));
+$("#9 .description").val(localStorage.getItem("9"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
 
