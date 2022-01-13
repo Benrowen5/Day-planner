@@ -1,5 +1,5 @@
-## Homework-5
-Homework challenge #5 due on 9/27/2021
+## Day Planner
+Day planner application using JQuery
 
 ## Description:</br>
 This challenge was to create a calendar application which allows users to save events for each hour of a typical business day. The app color codes the time blocks based on the the current time of day, and automatically loads any events that were saved previously. This application runs in the browser and is responsive to various screen sizes. 
